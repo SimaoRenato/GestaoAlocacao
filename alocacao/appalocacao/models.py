@@ -19,8 +19,7 @@ class Alocacao(models.Model):
     cenario_3 = models.CharField(max_length=45, db_collation='utf8_bin')
     tipoalocacao_idtipoalocacao = models.ForeignKey('Tipoalocacao', models.DO_NOTHING, db_column='tipoAlocacao_idtipoAlocacao')  # Field name made lowercase.
 
-    def __str__(self):
-        return self.horas
+
 
     class Meta:
         managed = False

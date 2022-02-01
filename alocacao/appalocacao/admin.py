@@ -18,7 +18,7 @@ admin.site.register(Alocacao,AlocacaoAdmin)
 admin.site.register(Area)
 
 class ColaboradorAdmin(admin.ModelAdmin):
-    list_display = ['matricula','nomecolaborador','id_contrato','id_area']
+    list_display = ['matricula','nomecolaborador','id_contrato','id_area','id_equipe','ativo']
 
 admin.site.register(Colaborador,ColaboradorAdmin)
 
