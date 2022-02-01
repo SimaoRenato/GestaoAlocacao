@@ -4,6 +4,13 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from .models import Colaborador
+from .models import Alocacao
+from django.views.generic import ListView
+
+
+class TabelaAlocacaoListView(ListView):
+    model = Colaborador
+    template_name = 'templates/tabela_alocacao.html'
 
 
 def index(request):
@@ -27,3 +34,4 @@ def index(request):
 
 def newAloc(request,name):
     return HttpResponse("Aqui poderá ser cadastrada uma nova alocação para %s" % name)
+
