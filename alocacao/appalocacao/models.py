@@ -20,7 +20,7 @@ class Alocacao(models.Model):
     tipoalocacao_idtipoalocacao = models.ForeignKey('Tipoalocacao', models.DO_NOTHING, db_column='tipoAlocacao_idtipoAlocacao')  # Field name made lowercase.
 
     def __str__(self):
-        return self.idalocacao
+        return self.horas
 
     class Meta:
         managed = False
@@ -49,10 +49,12 @@ class Colaborador(models.Model):
 
     def __str__(self):
         return self.nomecolaborador
+        # return f"{self.matricula},{self.nomecolaborador},{self.id_contrato},{self.id_area}"
 
     class Meta:
         managed = False
         db_table = 'colaborador'
+        ordering = ("matricula","nomecolaborador")
 
 
 class Contratos(models.Model):
