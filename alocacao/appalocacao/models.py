@@ -36,6 +36,7 @@ class Area(models.Model):
     class Meta:
         managed = False
         db_table = 'area'
+        ordering = ("nome_area","idarea")
 
 
 class Colaborador(models.Model):
