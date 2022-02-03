@@ -22,7 +22,7 @@ class Alocacao(models.Model):
 
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'alocacao'
 
 
@@ -34,7 +34,7 @@ class Area(models.Model):
         return self.nome_area
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'area'
         ordering = ("nome_area","idarea")
 
@@ -46,6 +46,8 @@ class Colaborador(models.Model):
     id_equipe = models.ForeignKey('Equipe', models.DO_NOTHING, db_column='ID_Equipe')  # Field name made lowercase.
     id_area = models.ForeignKey(Area, models.DO_NOTHING, db_column='ID_Area')  # Field name made lowercase.
     id_contrato = models.ForeignKey('Contratos', models.DO_NOTHING, db_column='ID_Contrato')  # Field name made lowercase.
+    #iniciocontrato = models.DateField(db_column='inicioContrato')
+    #fimcontrato = models.DateField(db_column='fimContrato')
 
 
     def __str__(self):
@@ -53,7 +55,7 @@ class Colaborador(models.Model):
         # return f"{self.matricula},{self.nomecolaborador},{self.id_contrato},{self.id_area}"
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'colaborador'
         ordering = ("matricula","nomecolaborador")
 
@@ -66,7 +68,7 @@ class Contratos(models.Model):
         return self.tipo_contrato
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'contratos'
 
 
@@ -78,7 +80,7 @@ class Equipe(models.Model):
         return self.equipe
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'equipe'
 
 
@@ -92,7 +94,7 @@ class Projetos(models.Model):
         return self.nomeprojeto
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'projetos'
 
 
@@ -104,7 +106,7 @@ class Tipoalocacao(models.Model):
         return self.tipo_alocacao
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'tipoalocacao'
 
 
@@ -117,5 +119,5 @@ class Valorhora(models.Model):
 
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'valorhora'

@@ -11,23 +11,37 @@ from .models import Valorhora
 from .models import Projetos
 from .models import Equipe
 
+
 class AlocacaoAdmin(admin.ModelAdmin):
     list_display = ['colaborador_matricula','id_projetos','horas','mes_ano','tipoalocacao_idtipoalocacao']
+
+
 admin.site.register(Alocacao,AlocacaoAdmin)
 
 admin.site.register(Area)
 
+
 class ColaboradorAdmin(admin.ModelAdmin):
     list_display = ['matricula','nomecolaborador','id_contrato','id_area','id_equipe','ativo']
+
 
 admin.site.register(Colaborador,ColaboradorAdmin)
 
 admin.site.register(Contratos)
 
+
 class ProjetosAdmin(admin.ModelAdmin):
     list_display = ['idprojetos','nomeprojeto','empresa','statusprojetos']
+
+
 admin.site.register(Projetos,ProjetosAdmin)
 
 admin.site.register(Tipoalocacao)
-admin.site.register(Valorhora)
+
+
+class valorHoraAdmin(admin.ModelAdmin):
+    list_display = ['colaborador_matricula','valorhora','vigenciainicio','vigenciafim']
+
+
+admin.site.register(Valorhora,valorHoraAdmin)
 admin.site.register(Equipe)
