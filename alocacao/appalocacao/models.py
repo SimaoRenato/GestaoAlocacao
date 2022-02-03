@@ -47,6 +47,7 @@ class Colaborador(models.Model):
     id_area = models.ForeignKey(Area, models.DO_NOTHING, db_column='ID_Area')  # Field name made lowercase.
     id_contrato = models.ForeignKey('Contratos', models.DO_NOTHING, db_column='ID_Contrato')  # Field name made lowercase.
 
+
     def __str__(self):
         return self.nomecolaborador
         # return f"{self.matricula},{self.nomecolaborador},{self.id_contrato},{self.id_area}"
